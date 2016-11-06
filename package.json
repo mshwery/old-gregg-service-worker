@@ -1,0 +1,17 @@
+{
+  "name": "minimalist",
+  "version": "1.0.0",
+  "description": "A minimal list app",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Matt Shwery",
+  "engines": {
+    "node": "6.9.x"
+  },
+  "dependencies": {
+    "hapi": "^15.2.0"
+  }
+}
