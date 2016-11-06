@@ -1,7 +1,7 @@
 {
-  "name": "minimalist",
+  "name": "old-gregg",
   "version": "1.0.0",
-  "description": "A minimal list app",
+  "description": "old gregg notifications",
   "private": true,
   "main": "server.js",
   "scripts": {
@@ -12,6 +12,7 @@
     "node": "6.9.x"
   },
   "dependencies": {
-    "hapi": "^15.2.0"
+    "hapi": "^15.2.0",
+    "inert": "^4.0.2"
   }
 }
