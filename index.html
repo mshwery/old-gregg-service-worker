@@ -1,70 +1,13 @@
 <!doctype html>
-<html>
+<html lang='en-US'>
   <head>
-    <title>Notify me!</title>
+    <meta charset='utf-8'>
+    <title>Push & Notification Demo</title>
+    <meta name='description' content='Demo of Push and Notification APIs on the web.'>
+    <link rel='icon' href='old-gregg-avatar.png'>
+    <link rel='stylesheet' href='styles.css'>
   </head>
-  <style>
-    html, body {
-      height: 100%;
-    }
-
-    body {
-      background-image: url('lake.jpg');
-      background-size: cover;
-      background-position: center;
-    }
-  </style>
   <body>
-    <script>
-      if (!'Notification' in window) {
-        alert('Sorry, this browser doesn\'t support desktop notifications');
-      }
-
-      var gregg = 'https://ih0.redbubble.net/image.121808726.6452/sticker,375x360.png';
-      var name = 'Old Gregg';
-
-      function spawnNotification(body, icon, title) {
-        var options = {
-            body: body,
-            icon: icon || gregg
-        }
-        return new Notification(title || name, options);
-      }
-
-      var quotes = [
-        'Hi there.',
-        'Pleased to meetcha',
-        'What do ya think of me?',
-        'Make an assessment',
-        'I got all things that are good.',
-        'Easy now fuzzy little man peach.',
-        'I\'m Old Gregg!',
-        'Bailey\'s. Mmm... creamy. Soft creamy beige.'
-      ];
-
-      function getQuote() {
-        var quote = quotes.shift();
-
-        if (!quote) {
-          return;
-        }
-
-        var notification = spawnNotification(quote);
-
-        var time = Math.floor(Math.random() * 10000) + 2000;
-        setTimeout(function() {
-          getQuote();
-        }, time);
-      }
-
-      if (Notification.permission === 'granted') {
-        getQuote();
-      } else if (Notification.permission !== 'denied') {
-        Notification.requestPermission().then(function(permission) {
-          console.log('Notification permission: ' + permission);
-          getQuote();
-        });
-      }
-    </script>
+    <script src='main.js'></script>
   </body>
 </html>
